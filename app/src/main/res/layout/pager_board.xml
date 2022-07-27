@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="@color/teal_700"
+    android:layout_height="match_parent">
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="300dp"
+        android:id="@+id/lottieAnim"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_height="300dp"/>
+
+
+    <TextView
+        android:layout_marginTop="32dp"
+        android:id="@+id/textTitle"
+        android:layout_marginBottom="32dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:text="TITLE"
+        android:fontFamily="@font/damion"
+        android:textSize="28sp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textDesc"
+        android:fontFamily="@font/akaya_telivigala"
+        android:layout_width="wrap_content"
+        android:text="Description"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_marginTop="16dp"
+        android:text="Get started"
+        android:background="@drawable/gradient"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+</LinearLayout>
