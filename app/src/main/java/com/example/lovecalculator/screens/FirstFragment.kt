@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lovecalculator.App
+import com.example.lovecalculator.LoveViewModel
 import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.FragmentFirstBinding
 import com.example.lovecalculator.model.LoveModel
@@ -22,6 +24,7 @@ class FirstFragment : Fragment() {
 
     private lateinit var binding: FragmentFirstBinding
     private val appear: Animation by lazy { AnimationUtils.loadAnimation(requireContext(),R.anim.appear) }
+    val viewModel:LoveViewModel by viewModels()
 
 
     override fun onCreateView(
@@ -35,11 +38,28 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         animation()
-        binding.calculate.setOnClickListener {
-            doRequest(binding.firstNameEd.text.toString(),binding.secondNameEd.text.toString())
+        initClickers()
 
+    }
+
+    private fun initClickers() {
+        with(binding){
+            btnSumbit.setOnClickListener {
+                viewModel.getLiveLoveModel(firstNameEd.text.toString(),secondNameEd.text.toString())
+                    .observe(viewLifecycleOwner,{
+
+                        Log.e("ololo","clickers: ${it.result} ${it.percentage}")
+                        val result = it.result
+                        val percentage = it.percentage
+                        val bundle = Bundle()
+                        bundle.putString("result",result)
+                        bundle.putString("percentage",percentage)
+
+                        findNavController().navigate(R.id.secondFragment,bundle)
+                    })
+
+            }
         }
-
     }
 
     private fun animation() {
@@ -49,28 +69,6 @@ class FirstFragment : Fragment() {
         lovetxt.startAnimation(appear)}
     }
 
-    private fun doRequest(firsName:String,secondName:String) {
-        with(App) {
-            api.calculate(firsName, secondName).enqueue(object : Callback<LoveModel> {
-                override fun onResponse(call: Call<LoveModel>, response: Response<LoveModel>) {
-                    Log.e("ololo", "onResponse:${response.body()?.result} ${response.body()?.percentage}")
-                    val result = response.body()?.result
-                    val percentage = response.body()?.percentage
-                    val bundle = Bundle()
-                    bundle.putString("result",result)
-                    bundle.putString("percentage",percentage)
-
-                    findNavController().navigate(R.id.secondFragment,bundle)
-
-                }
-
-                override fun onFailure(call: Call<LoveModel>, t: Throwable) {
-                    Log.e("ololo", "onFailure: ${t.message}")
-                }
-
-            })
-        }
-    }
 
 
 
