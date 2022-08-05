@@ -7,13 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.example.lovecalculator.Prefs
 import com.example.lovecalculator.databinding.FragmentBoardBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class BoardFragment : Fragment() {
 
     private lateinit var binding:FragmentBoardBinding
 
+    @Inject
+    lateinit var prefs: Prefs
 
 
     override fun onCreateView(
@@ -29,6 +34,7 @@ class BoardFragment : Fragment() {
 
         val adapter = BoardAdapter {
             findNavController().navigateUp()
+            prefs.saveState()
         }
         binding.viewPager.adapter = adapter
         val dots= binding.wormDotsIndicator

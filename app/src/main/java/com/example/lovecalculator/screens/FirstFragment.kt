@@ -15,16 +15,18 @@ import com.example.lovecalculator.LoveViewModel
 import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.FragmentFirstBinding
 import com.example.lovecalculator.model.LoveModel
+import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
+@AndroidEntryPoint
 class FirstFragment : Fragment() {
 
     private lateinit var binding: FragmentFirstBinding
     private val appear: Animation by lazy { AnimationUtils.loadAnimation(requireContext(),R.anim.appear) }
     val viewModel:LoveViewModel by viewModels()
+
 
 
     override fun onCreateView(

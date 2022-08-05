@@ -5,16 +5,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.lovecalculator.App
 import com.example.lovecalculator.model.LoveModel
+import com.example.lovecalculator.network.LoveApi
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class Repository {
+class Repository @Inject constructor(private val  api:LoveApi) {
 
     fun getLoveModel(firsName:String,secondName:String): MutableLiveData<LoveModel>{
         val loveModel:MutableLiveData<LoveModel> = MutableLiveData()
 
-        App.api.calculate(firsName,secondName).enqueue(object: Callback<LoveModel> {
+        api.calculate(firsName,secondName).enqueue(object: Callback<LoveModel> {
             override fun onResponse(call: Call<LoveModel>, response: Response<LoveModel>) {
                 loveModel.postValue(response.body())
 
