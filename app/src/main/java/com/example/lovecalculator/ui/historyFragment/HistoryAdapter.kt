@@ -96,16 +96,10 @@ class HistoryAdapter(private val onClick:(position:Int)->Unit) :
         notifyDataSetChanged()
     }
 
-    fun removeItems(list: List<LoveModel>) {
-        this.list.removeAll(list)
-        notifyDataSetChanged()
-    }
 
 
-    fun removeItem(position: Int) {
-        list.removeAt(position)
-        notifyItemRemoved(position)
-    }
+
+
 
     fun addList(list: List<LoveModel>) {
         this.list = list as ArrayList<LoveModel>
