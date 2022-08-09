@@ -14,8 +14,6 @@ interface LoveDao {
     @Insert
     fun insert(loveModel: LoveModel)
 
-    @Update
-    fun update(loveModel: LoveModel)
 
     @Delete
     fun delete(loveModel: LoveModel)
