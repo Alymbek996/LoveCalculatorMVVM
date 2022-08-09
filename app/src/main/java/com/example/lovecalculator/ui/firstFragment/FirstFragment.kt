@@ -1,4 +1,4 @@
-package com.example.lovecalculator.screens
+package com.example.lovecalculator.ui.firstFragment
 
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.lovecalculator.App
 import com.example.lovecalculator.LoveViewModel
@@ -16,9 +17,6 @@ import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.FragmentFirstBinding
 import com.example.lovecalculator.model.LoveModel
 import dagger.hilt.android.AndroidEntryPoint
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 @AndroidEntryPoint
 class FirstFragment : Fragment() {
@@ -46,7 +44,7 @@ class FirstFragment : Fragment() {
 
     private fun initClickers() {
         with(binding){
-            btnSumbit.setOnClickListener {
+            calculate.setOnClickListener {
                 viewModel.getLiveLoveModel(firstNameEd.text.toString(),secondNameEd.text.toString())
                     .observe(viewLifecycleOwner,{
 
@@ -58,8 +56,22 @@ class FirstFragment : Fragment() {
                         bundle.putString("percentage",percentage)
 
                         findNavController().navigate(R.id.secondFragment,bundle)
+
+
+                            App.database.LoveDao().insert(it!!)
+
+                            it?.firstName = firstNameEd.text.toString()
+
+                        bundle.putSerializable("love", it)
+                        parentFragmentManager.setFragmentResult("love", bundle)
+
+
                     })
 
+            }
+
+            historytxt.setOnClickListener {
+                findNavController().navigate(R.id.historyFragment)
             }
         }
     }

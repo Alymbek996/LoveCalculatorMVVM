@@ -1,4 +1,4 @@
-package com.example.lovecalculator
+package com.example.lovecalculator.service
 
 import com.example.lovecalculator.network.LoveApi
 import retrofit2.Retrofit

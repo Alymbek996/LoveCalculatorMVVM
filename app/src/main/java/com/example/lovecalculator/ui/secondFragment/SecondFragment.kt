@@ -1,4 +1,4 @@
-package com.example.lovecalculator.screens
+package com.example.lovecalculator.ui.secondFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
