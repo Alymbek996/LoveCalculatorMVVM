@@ -4,28 +4,8 @@
     android:layout_height="150dp"
     android:padding="12dp"
     android:layout_margin="15dp"
-    android:background="#FF1744"
+    android:background="@color/transparent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/heartOne"
-        android:layout_marginStart="105dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/percentage"
-        app:layout_constraintBottom_toBottomOf="@id/percentage"
-        app:lottie_autoPlay="true"
-        android:layout_width="50dp"
-        android:layout_height="50dp"/>
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/heartTwo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:lottie_autoPlay="true"
-        android:layout_marginEnd="110dp"
-        app:layout_constraintTop_toTopOf="@id/percentage"
-        app:layout_constraintBottom_toBottomOf="@id/percentage"
-        android:layout_width="50dp"
-        android:layout_height="50dp"/>
-
 
     <TextView
         android:id="@+id/firstName"
@@ -33,9 +13,9 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:text="FirstName"
-
-        android:textColor="#1DE9B6"
+        android:textColor="@color/black"
         android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_height="wrap_content"/>
 
     <TextView
@@ -45,8 +25,9 @@
         app:layout_constraintEnd_toEndOf="@id/secondName"
         android:layout_width="wrap_content"
         android:text="  -  "
-        android:textColor="#1DE9B6"
+        android:textColor="@color/black"
         android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_height="wrap_content"/>
     <TextView
         android:id="@+id/secondName"
@@ -54,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:text="secondName"
-        android:textColor="#1DE9B6"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:layout_height="wrap_content"/>
 
@@ -66,8 +47,9 @@
         android:layout_margin="25dp"
         android:layout_width="wrap_content"
         android:text="percentage%"
-        android:textColor="#1DE9B6"
+        android:textColor="@color/black"
         android:textSize="16sp"
+        android:textStyle="bold"
         android:layout_height="wrap_content"/>
 
     <TextView
@@ -78,7 +60,8 @@
         android:layout_margin="25dp"
         android:layout_width="wrap_content"
         android:text="result"
-        android:textColor="#1DE9B6"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_height="wrap_content"/>
 

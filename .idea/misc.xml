@@ -13,6 +13,16 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/LoveCalculator/app/src/main/res/layout/fragment_second.xml" value="0.16" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/LoveCalculator/app/src/main/res/layout/item_love_rv.xml" value="0.264" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/LoveCalculator/app/src/main/res/layout/pager_board.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable-v24/gradient.xml" value="0.1215" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1215" />
+        <entry key="app/src/main/res/drawable/ic_baseline_heart_broken_24.xml" value="0.1215" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1215" />
+        <entry key="app/src/main/res/layout/fragment_board.xml" value="0.178125" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.178125" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/item_love_rv.xml" value="0.178125" />
+        <entry key="app/src/main/res/layout/pager_board.xml" value="0.178125" />
       </map>
     </option>
   </component>

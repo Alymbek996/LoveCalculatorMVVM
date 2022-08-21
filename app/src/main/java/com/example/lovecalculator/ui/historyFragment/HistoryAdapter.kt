@@ -51,8 +51,6 @@ class HistoryAdapter(private val onClick:(position:Int)->Unit) :
                     "Can choose someone better."->{result.text=" Нужен другой партнёр ;( "}
                     "Not a good choice."->{ result.text=" Так себе выбор. " }}
 
-                heartOne.setAnimation(R.raw.spinningheart)
-                heartTwo.setAnimation(R.raw.spinningheart)
             }
 
 

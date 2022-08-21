@@ -22,10 +22,9 @@ class BoardAdapter(private val startClick: () -> Unit) :RecyclerView.Adapter<Boa
 
              with(binding) {
                  when(position){
-                     0->{lottieAnim.setAnimation(R.raw.manandwomansayhi)}
-                     1->{lottieAnim.setAnimation(R.raw.dunno)}
-                     2->{lottieAnim.setAnimation(R.raw.ohmabqob)}
-                     3->{lottieAnim.setAnimation(R.raw.love)}
+                     0->{lottieAnim.setAnimation(R.raw.lottie1)}
+                     1->{lottieAnim.setAnimation(R.raw.lottie2)}
+                     2->{lottieAnim.setAnimation(R.raw.lottie3)}
                  }
                  if (position == titles.size-1){
                      btnStart.visibility = View.VISIBLE

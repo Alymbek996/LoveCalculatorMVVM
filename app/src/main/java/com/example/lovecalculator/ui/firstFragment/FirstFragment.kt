@@ -37,7 +37,6 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        animation()
         initClickers()
 
     }
@@ -74,13 +73,6 @@ class FirstFragment : Fragment() {
                 findNavController().navigate(R.id.historyFragment)
             }
         }
-    }
-
-    private fun animation() {
-        with(binding){
-        btnSumbit.setAnimation(R.raw.circleredbutton)
-        anim.setAnimation(R.raw.spinningheart)
-        lovetxt.startAnimation(appear)}
     }
 
 

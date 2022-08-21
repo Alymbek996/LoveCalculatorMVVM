@@ -4,16 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/heaven"
+    android:background="@drawable/image1"
     tools:context=".ui.historyFragment.HistoryFragment">
 
     <TextView
         android:layout_marginTop="50dp"
-        android:textColor="@color/teal_200"
-        android:fontFamily="@font/damion"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:id="@+id/history"
-        android:text="Love History"
+        android:text=" History"
         android:textSize="32dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
@@ -24,6 +23,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="700dp"
+
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_love_rv" />
 

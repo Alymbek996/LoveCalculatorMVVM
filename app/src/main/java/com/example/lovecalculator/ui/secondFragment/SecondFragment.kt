@@ -43,7 +43,6 @@ class SecondFragment : Fragment() {
                 "Not a good choice."->{ resultTxt.text=" Так себе выбор. " }}
 
             percentageTxt.text = "$percentage%"
-            heart.setAnimation(R.raw.spinningheart)
             tryAgain.setOnClickListener {
                 findNavController().navigateUp()
             }
